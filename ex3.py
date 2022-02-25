@@ -18,15 +18,25 @@ def valores() :
 
 
 while entradasCount <= entradas:
+    print(f'Entrada {entradasCount} :\n')
     if(hashmatSoldiers > oponentSoldiers) :
-        print('O número de soldados de Hashmat não deve ser maior do que seu oponente.\n')
+        print('O número de soldados de Hashmat não deve ser maior do que seu oponente.\n'
+              'INFORME OS VALORES NOVAMENTE : \n')
         hashmatLista = []
         oponentLista = []
         entradasCount = 0
     if(entradasCount == entradas):
         print(f'{entradasCount}\n'
-        f'{hashmatLista} {oponentLista}')
+        f'{hashmatLista} {oponentLista}\n')
         break
     entradasCount += 1
     valores()
-    
+
+print('VALORES INPUTADOS : \n')
+
+for i in range(len(oponentLista)):  # pega os valores do append na lista oponent, inputada pelo usuário
+    print(f'{i}\n')
+
+for i in range(len(hashmatLista)): # pega os valores do append na lista hashmat, inputada pelo usuário
+    print(f'{i}\n')
+    print (f'HASHMAT : {hashmatLista[i]}  OPONENT {oponentLista[i]}\n')
