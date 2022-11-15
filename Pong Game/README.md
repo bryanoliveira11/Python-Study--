@@ -2,7 +2,7 @@
 
 ## Jogo de Pong feito como forma de estudos
 
-Foi feito com :
+Foi feito usando :
 
 - Python
 - Django (ORM)
