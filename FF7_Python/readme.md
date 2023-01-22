@@ -1,3 +1,3 @@
 - python script that will automatic farm the buster sword proeficiency in FF7 Crisis Core
-- you'll need pyautogui to run this !
+- uses pyautogui !
 - youtube demo video : https://www.youtube.com/watch?v=3APiTYKXrbM
