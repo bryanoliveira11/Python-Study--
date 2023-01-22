@@ -21,11 +21,14 @@ def battleKeyboard():
     time.sleep(1)
     pyautogui.keyDown('e')
     pyautogui.keyDown('i')
+    pyautogui.keyUp('i')
     time.sleep(2)
     pyautogui.keyDown('i')
+    pyautogui.keyUp('i')
     pyautogui.keyUp('e')
     pyautogui.keyDown('f')
     pyautogui.keyDown('i')
+    pyautogui.keyUp('i')
     pyautogui.keyUp('f')
 
 def autoBattle():
