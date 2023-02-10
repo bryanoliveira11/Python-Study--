@@ -1,7 +1,13 @@
 import PySimpleGUI as sg
 import random
+
 sg.change_look_and_feel('DarkBlue')
 error_msg_color = ['#fa4437','#42a1ff','#fff53b']
+
+
+game_rock_img = r'rock_paper_scissor_PROJECT\img\rock_bg.png'
+game_paper_img = r'rock_paper_scissor_PROJECT\img\paper_bg.png'
+game_scissors_img = r'rock_paper_scissor_PROJECT\img\scissors_bg.png'
 
 ROCK = 'ROCK'
 PAPER = 'PAPER'
@@ -31,7 +37,7 @@ def start_screen():
     win_count = []
 
     game_title_text = [sg.Text('   '),sg.Text('ROCK',font=('Cooper Black',15)),sg.Text('PAPER',font=('Cooper Black',15),pad=(55,0)),sg.Text('SCISSORS',font=('Cooper Black',15)),],
-    game_imgs = [sg.Image(r'C:\Users\bryan.oliveira\Desktop\Python\rock_paper_scissor_PROJECT\img\rock_bg.png',key='-rock-'),sg.Image(r'C:\Users\bryan.oliveira\Desktop\Python\rock_paper_scissor_PROJECT\img\paper_bg.png',key='-paper-'),sg.Image(r'C:\Users\bryan.oliveira\Desktop\Python\rock_paper_scissor_PROJECT\img\scissors_bg.png',key='-scissors-')],
+    game_imgs = [sg.Image(f'{game_rock_img}',key='-rock-'),sg.Image(f'{game_paper_img}',key='-paper-'),sg.Image(f'{game_scissors_img}',key='-scissors-')],
     game_number_text = [sg.Text(' '),sg.Text('Number of Games :',font=('Cooper Black',18))],
     game_input_battleNum = [sg.Text(''),sg.Input(key='battle_number',size=(6),font=('Arial',20))],
     game_start_button = [sg.Text(' '),sg.Button('-START-',font='Arial')],
@@ -73,7 +79,7 @@ def start_game():
 
     game_title_battle = [sg.Text(f'Battle {battle_count}',font=('Cooper Black',20),key='game_title_battle')],
     game_choose_weapon = [sg.Text(f' Choose Your Weapon : ',font=('Arial',18))],
-    game_img_choice = [sg.Image(r'C:\Users\bryan.oliveira\Desktop\Python\rock_paper_scissor_PROJECT\img\rock_bg.png',key='-rock-'),sg.Image(r'C:\Users\bryan.oliveira\Desktop\Python\rock_paper_scissor_PROJECT\img\paper_bg.png',key='-paper-'),sg.Image(r'C:\Users\bryan.oliveira\Desktop\Python\rock_paper_scissor_PROJECT\img\scissors_bg.png',key='-scissors-')],
+    game_img_choice = [sg.Image(f'{game_rock_img}',key='-rock-'),sg.Image(f'{game_paper_img}',key='-paper-'),sg.Image(f'{game_scissors_img}',key='-scissors-')],
     game_checkboxes = [sg.Checkbox('ROCK',default=False,enable_events=True,key='-choice_rock-',),sg.Text('',size=(7,1)),sg.Checkbox(' PAPER',default=False,enable_events=True,key='-choice_paper-'),sg.Text('',size=(6,1)),sg.Checkbox(' SCISSORS',default=False,enable_events=True,key='-choice_scissors-')],
     game_start_button = [sg.Text(' '),sg.Button('-BATTLE-',font='Arial')],
     game_error_return = [[sg.Text(' '),sg.Text('',key='error_msg',font=('Arial',16))]]
@@ -133,8 +139,29 @@ def enemy_battle_choice():
 
 def battle_screen():
 
+    enemy_b_choice = enemy_battle_choice()
+    player_img_ref = enemy_img_ref = ''
+
+    print(player_weapon_choice, player_img_ref, enemy_b_choice, enemy_img_ref)
+
+    # bug starts here
+    if player_weapon_choice == 'ROCK':
+        player_img_ref = game_rock_img
+    elif player_weapon_choice == 'PAPER':
+        player_img_ref == game_paper_img
+    elif player_weapon_choice == 'SCISSOR':
+        player_img_ref == game_scissors_img
+
+    if enemy_b_choice == 'ROCK':
+        enemy_img_ref = game_rock_img
+    elif enemy_b_choice == 'PAPER':
+        enemy_img_ref == game_paper_img
+    elif player_weapon_choice == 'SCISSOR':
+        enemy_img_ref == game_scissors_img    
+    # bug ends here
+
     game_battle_count = [sg.Text(f'Battle {battle_count}',font=('Cooper Black',20),key='game_title_battle')],
-    game_battle_imgs = [sg.Image(r'C:\Users\bryan.oliveira\Desktop\Python\rock_paper_scissor_PROJECT\img\rock_bg.png',key='-rock-'),sg.Text('',size=(14,1)),sg.Image(r'C:\Users\bryan.oliveira\Desktop\Python\rock_paper_scissor_PROJECT\img\scissors_bg.png',key='-scissors-')],
+    game_battle_imgs = [sg.Image(rf'{player_img_ref}',key='-player_choice_img-'),sg.Text(' ',size=(14,1)),sg.Image(rf'{enemy_img_ref}',key='-enemy_choice_img-')],
     game_battle_choices = [sg.Text('',key='-player-',font=('Cooper Black',15)),sg.Text("",size=(20,1)),sg.Text('',key='-enemy-',font=('Cooper Black',15))],
     game_battle_next = [sg.Text(' '),sg.Button('-NEXT-',font='Arial')],
 
@@ -146,7 +173,6 @@ def battle_screen():
 
     battle_screen_layout = sg.Window('GAME',size=(600,375),finalize=True,layout=layout_geral)
 
-    enemy_b_choice = enemy_battle_choice()
     battle_screen_layout['-player-'].update(player_weapon_choice)
     battle_screen_layout['-enemy-'].update(enemy_b_choice)
 
