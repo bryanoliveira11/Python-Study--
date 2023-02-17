@@ -1,12 +1,20 @@
 This is a simple python application that downloads youtube videos via URL
 
-You can :
 
-1 - Download single videos </br>
-2 - Download full playlists
+You Can :
 
-Python Modules used : 
+- Download single videos </br>
+- Download full playlists
 
-- pytube for downloading
-- re to validate the url format for both, single videos or playlists
-- pytube.cli on_progress to create a simple output of a progress bar 
+
+17/2/23 - changes
+
+* general changes to make it run better and with less errors / prompt 'polution'
+* now the app will save some data in a json archive, such as title, type of url (video or playlist), datetime
+
+
+Other Plans :
+
+- Make a graphical version of it
+- Let user choose resolution
+- Let user choose the download location
