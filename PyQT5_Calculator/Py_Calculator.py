@@ -44,9 +44,8 @@ class Calculadora(QMainWindow):
         self.add_btn(QPushButton('.'), 4, 0, 1, 1)
         self.add_btn(QPushButton('SAIR'), 4, 4, 1, 1, lambda: exit())
 
-        
-
         self.setCentralWidget(self.cw)
+        
 
     def add_btn(self,btn,row,col,rowspan,colspan, funcao=None, style=None): # método para adicionar os botões na tela 
 
