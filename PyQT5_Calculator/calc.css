@@ -1,0 +1,9 @@
+QPushButton {
+    font-size: 20px;
+    background : #E3E5E8 ; 
+    border-radius: 5px;
+}
+
+QPushButton::hover { 
+    font-size: 25px;
+}
