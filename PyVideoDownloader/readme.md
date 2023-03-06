@@ -18,7 +18,7 @@ What it does ?
  - Some of CSS to style a bit
  - There is Also 2 Versions of the App, One for English and Other for BR Portuguese
 
-######################################################################################
+###################################################################################### <br/>
 
 PyVideo Downloader é um Aplicativo que Fiz Como forma de Estudos Usando Python
 
@@ -40,7 +40,7 @@ O Aplicativo Contém :
 - Um Pouco de CSS
 - Existem Também Duas Versões da Aplicação, Uma em Inglês e Outra em Português.
 
-######################################################################################
+###################################################################################### <br/>
 
 DEMO IMAGES : <br/> <br/>![main](https://user-images.githubusercontent.com/80005824/223220578-015b7f99-aca9-4ab7-a325-e603b9a3fbb4.png) <br/>
 ![opt](https://user-images.githubusercontent.com/80005824/223220613-61edb45f-7173-4b6f-8ebb-2f8a876fae4c.png) <br/>
