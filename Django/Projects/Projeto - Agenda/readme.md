@@ -2,4 +2,8 @@ A Simple Agenda to Study Django
 
 Uma Agenda Simples Feita para Estudos de Django<br>
 
-![2023-04-06-13-03-36](https://user-images.githubusercontent.com/80005824/230435973-77f18e37-6227-4e2f-a708-c817fa4ee0bc.gif)
+
+
+
+https://user-images.githubusercontent.com/80005824/230436086-c7ca5666-8397-446f-af45-908b6f4d883e.mp4
+
